@@ -27,8 +27,8 @@ export function ExcursaoForm() {
     return (
       <div className="card" style={{ maxWidth: 560 }}>
         <p className="msg msg--ok" role="status" style={{ margin: 0 }}>Excursão criada como rascunho.</p>
-        <p className="card__meta">A lista de excursões e a opção de publicar chegam na próxima parte desta etapa.</p>
-        <div><a className="btn" href="/painel">Voltar ao painel</a></div>
+        <p className="card__meta">Abra a excursão na lista para publicá-la quando estiver pronta.</p>
+        <div><a className="btn" href="/painel/excursoes">Ver excursões</a></div>
       </div>
     );
   }

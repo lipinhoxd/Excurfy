@@ -1,10 +1,16 @@
 // Selos de status: sempre ponto + texto, nunca só cor.
 const STATUS = {
+  // pagamentos e embarque
   pago: { texto: "Pago", tom: "positivo" },
   embarque_confirmado: { texto: "Embarque confirmado", tom: "positivo" },
   parcela_a_vencer: { texto: "Parcela a vencer", tom: "aviso" },
   ultimas_vagas: { texto: "Últimas vagas", tom: "aviso" },
   atrasado: { texto: "Atrasado", tom: "perigo" },
+  // ciclo de vida da excursão
+  rascunho: { texto: "Rascunho", tom: "neutro" },
+  publicada: { texto: "Publicada", tom: "positivo" },
+  encerrada: { texto: "Encerrada", tom: "neutro" },
+  cancelada: { texto: "Cancelada", tom: "perigo" },
 } as const;
 
 export type StatusBadge = keyof typeof STATUS;

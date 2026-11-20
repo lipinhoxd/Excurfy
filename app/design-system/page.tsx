@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/Input";
 export const metadata = { title: "Design system — Excurfy", robots: { index: false, follow: false } };
 
 const CORES = ["brand", "brand-strong", "navy", "teal", "sand", "surface", "surface-alt", "border", "ink", "ink-muted", "danger", "warning"];
-const STATUS: StatusBadge[] = ["pago", "embarque_confirmado", "parcela_a_vencer", "ultimas_vagas", "atrasado"];
+const STATUS: StatusBadge[] = ["pago", "embarque_confirmado", "parcela_a_vencer", "ultimas_vagas", "atrasado", "rascunho", "publicada", "encerrada", "cancelada"];
 
 export default function DesignSystem() {
   return (
