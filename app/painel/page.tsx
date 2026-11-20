@@ -24,7 +24,10 @@ export default async function Painel() {
           <div><a className="btn" href="/painel/perfil">Completar perfil</a></div>
         </section>
       ) : (
-        <p style={{ color: "var(--ink-muted)" }}>Suas excursões aparecem aqui na próxima parte desta etapa.</p>
+        <>
+          <p style={{ color: "var(--ink-muted)" }}>Suas excursões aparecem aqui na próxima parte desta etapa.</p>
+          <a className="btn" href="/painel/excursoes/nova">Criar excursão</a>
+        </>
       )}
     </>
   );
