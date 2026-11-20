@@ -1,5 +1,5 @@
 import { Logo } from "@/components/Logo";
-import { Button } from "@/components/ui/Button";
+import { Button, ButtonLink } from "@/components/ui/Button";
 import { PainelNav } from "@/components/ui/PainelNav";
 import { sair } from "../login/actions";
 
@@ -8,7 +8,10 @@ export default function PainelLayout({ children }: { children: React.ReactNode }
     <>
       <header className="painel__topo">
         <Logo />
-        <form action={sair}><Button variant="secondary" type="submit">Sair</Button></form>
+        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+          <ButtonLink variant="ghost" href="/painel/perfil">Perfil</ButtonLink>
+          <form action={sair}><Button variant="secondary" type="submit">Sair</Button></form>
+        </div>
       </header>
       <div className="painel__corpo">
         <PainelNav />
