@@ -1,24 +1,11 @@
-import { supabase } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase/public";
+import { Logo } from "@/components/Logo";
 
 export const revalidate = 60;
 
 type Plano = { id: string; nome: string; mensalidade: number; taxa_venda: number; limite_excursoes: number | null };
 
 const brl = (v: number) => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-
-function Logo() {
-  return (
-    <span style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
-      <svg width="36" height="36" viewBox="0 0 80 80" aria-hidden="true">
-        <rect width="80" height="80" rx="22" fill="#FF5A1F" />
-        <path d="M20 58 C 32 58, 30 30, 46 30 S 60 44, 60 22" fill="none" stroke="#fff" strokeWidth="7" strokeLinecap="round" />
-        <circle cx="20" cy="58" r="7" fill="#fff" />
-        <circle cx="60" cy="22" r="7" fill="#121A3A" />
-      </svg>
-      <span style={{ fontFamily: "var(--font-sora)", fontWeight: 700, fontSize: 24 }}>excurfy</span>
-    </span>
-  );
-}
 
 export default async function Home() {
   const { data: planos } = await supabase.from("planos").select("*").order("mensalidade");
@@ -27,7 +14,7 @@ export default async function Home() {
     <main>
       <header className="wrap" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "20px 24px" }}>
         <Logo />
-        <a className="btn btn--ghost" href="#planos">Planos</a>
+        <span style={{ display: "flex", gap: 8 }}><a className="btn btn--ghost" href="#planos">Planos</a><a className="btn btn--ghost" href="/login">Entrar</a></span>
       </header>
 
       <section style={{ background: "var(--navy)", color: "#fff" }}>
@@ -40,7 +27,7 @@ export default async function Home() {
             Tudo em um só lugar.
           </p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 28 }}>
-            <a className="btn" href="#planos">Começar grátis</a>
+            <a className="btn" href="/cadastro">Começar grátis</a>
           </div>
         </div>
       </section>

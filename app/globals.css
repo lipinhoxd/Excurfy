@@ -13,3 +13,19 @@ h1,h2,h3{font-family:var(--font-sora),system-ui,sans-serif}
 .btn:hover{background:var(--brand-strong)}
 .btn--ghost{background:transparent;color:var(--ink);border:1.5px solid var(--border)}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+:root{--danger:#C62828}
+@media (prefers-color-scheme: dark){:root{--danger:#FF6B6B}}
+.auth{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:32px 16px}
+.auth__card{width:100%;max-width:420px;margin-top:32px;padding:28px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--surface-alt)}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.field label{font-weight:600;font-size:14px}
+.field input{min-height:48px;padding:10px 14px;border:1.5px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:var(--ink);font:inherit}
+.field input:focus-visible{outline:3px solid var(--brand);outline-offset:1px}
+.field small{color:var(--ink-muted)}
+.msg{padding:12px 14px;border-radius:var(--radius-sm);margin:0 0 16px;font-size:14px}
+.msg--erro{border:1.5px solid var(--danger);color:var(--danger)}
+.msg--ok{border:1.5px solid var(--teal);color:var(--teal)}
+button.btn{border:0;cursor:pointer;font:inherit;font-weight:600;width:100%}
+button.btn--ghost{border:1.5px solid var(--border)}
+.link{color:var(--brand-strong);font-weight:600}
